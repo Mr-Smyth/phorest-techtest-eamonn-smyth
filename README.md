@@ -64,21 +64,36 @@ Also NodeJs by nature will allow me to keep my code more modularized and as a re
 
 # UI
 
-< Info about UI here >
+I wanted to keep a nice balance between informing the user, and also getting to the goal as quickly as possible. I believe the simplicity of the layout with the information section on the home page and the action button, strikes the right balance.
 
 ## Colours
+
+To give a relaxed contrast to the darkness of the Navigation and background image i used variations of Browns and Tans to highlight the text and text areas.  
++ [Tan and Brown](https://www.schemecolor.com/tan-and-brown-color-scheme.php)
 
 [<< Back to Index <<](#index)
 
 ## Fonts
 
+I used Luckiest Guy, to give a bolder variation to the site logo.   
+For the rest of the content i used a mixture of Nunito and Poppins.
+
 [<< Back to Index <<](#index)
 
 ## Styling
 
+I went for a fairly dark theme
+
 [<< Back to Index <<](#index)
 
 ## Wireframes
+
+The following wireframes were used to layout this project, but with plenty of light fonts and a feel good hero image in the background. Overall i feel the colours and images give a feeling of professional, but yet the feel good factor of a late summer evening.
+
++ [home page](https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth/blob/main/docs/wireframes/home.pdf)
++ [Search page](https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth/blob/main/docs/wireframes/client-search.pdf)
++ [Voucher page](https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth/blob/main/docs/wireframes/voucher.pdf)
++ [About page](https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth/blob/main/docs/wireframes/about.pdf)
 
 [<< Back to Index <<](#index)
 
