@@ -1,0 +1,29 @@
+{
+  "name": "phorest-techtest-eamonn-smyth",
+  "version": "1.0.0",
+  "description": "A project to get client information from an API and create a voucher",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth.git"
+  },
+  "author": "Eamonn Smyth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth/issues"
+  },
+  "homepage": "https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

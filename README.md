@@ -30,7 +30,9 @@
 
 Build a web application to utilize the Phorest platform and interact with their REST API.  
 
-I will build this application using NodeJs using express. I have chosen this as it is obviously using JavaScript which is fundemental to the requirements of the role. I considered using Python with perhaps flask or even Django having recently built applications with these libraries/frameworks. However i am currently learning NodeJs and i do like to push myself to use and learn new tech.
+I will build this application using NodeJs using express. I have chosen this as it is obviously using JavaScript which is fundemental to the requirements of the role. I considered using Python with perhaps flask or even Django having recently built applications with these libraries/frameworks. However i am currently learning NodeJs and i do like to push myself to use and learn new tech.   
+
+NodeJS is asynchronous and event driven. It has 'non-blocking' capabilities that allow it to scale to a large number of requests without being slowed down by a few expensive connections.   
 Also NodeJs by nature will allow me to keep my code more modularized and as a result easier to expand on or modify in the future if required.
 
 [<< Back to Index <<](#index)
