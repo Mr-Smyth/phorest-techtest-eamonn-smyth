@@ -15,7 +15,6 @@
   --logo-font: "Luckiest Guy", sans-serif;
 }
   
-  
 body {
     font-family: var(--primary-font);
     color: var(--primary-color);
@@ -40,13 +39,18 @@ a:hover {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: var(--primary-color);
     font-family: var(--secondary-font);
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
     color: var(--supplementary-color-1);
+    text-shadow: 0px 1px 1px silver; 
+}
+
+.active {
+    color: var(--supplementary-color-2);
     text-shadow: 0px 1px 1px silver; 
 }
 

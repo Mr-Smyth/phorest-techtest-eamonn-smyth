@@ -12,20 +12,25 @@
 
     <main class="container main__container flex-grow-1 mt-5">
         <h1 class="main__heading"><%= pageTitle %></h1>
-        <p>
-            Welcome To Voucher Store!
-        </p>
-        <p>
-            Here you are able to search for a clients, Select a client from your search results and create a voucher. 
-            To do this follow these simple instructions:
-            <ul>
-                <li>Click Get Started above, or select Search from the menu bar.</li>
-                <li>On the page that opens, enter either a phone number <strong><em>or</em></strong> an email address and click Search.</li>
-                <li>Select a result from the results window.</li>
-                <li>Enter an amount for the voucher and click Create.</li>
-                <li>Your voucher has been created and recorded.</li>
-            </ul>
-        </p>
+
+        <div class="container text-center">
+            <form class="form-inline row no-gutters">
+                <div class="col-12 col-md-6 ml-auto  form-group mb-2">
+                    <label for="phone-number" class="sr-only">Phone Number</label>
+                    <input type="number" class="form-control col-12 col-md-10" name="phone-number" id="phone-number" placeholder="Enter a Phone Number">
+                </div>
+                <button type="submit" class="btn btn-primary col-12 col-md-4 mr-auto mb-2">Search Numbers</button>
+            </form>
+        </div>
+
+        <div class="container text-center mt-5">
+            <form class="form-inline row no-gutters">
+                <div class="col-12 col-md-6 ml-auto  form-group mb-2">
+                    <label for="email-search" class="sr-only">Email Address</label>
+                    <input type="email" class="form-control col-12 col-md-10" name=="email-search" id="email-search" placeholder="Enter an email address">
+                </div>
+                <button type="submit" class="btn btn-primary col-12 col-md-4 mr-auto mb-2">Search Emails</button>
+            </form>
         </div>
         
     </main>

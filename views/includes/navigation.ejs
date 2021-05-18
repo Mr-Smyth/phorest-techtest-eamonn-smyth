@@ -10,9 +10,9 @@
         
         <div class="collapse navbar-collapse justify-content-end" id="navbarHamburger">
             <div class="navbar-nav text-center ">
-                <a class="nav-item nav-link" href="/">Home</a>
-                <a class="nav-item nav-link" href="/search">Search</a>               
-                <a class="nav-item nav-link" href="/about">About</a>               
+                <a class="nav-item nav-link <%= path === '/index' ? 'active' : '' %>" href="/">Home</a>
+                <a class="nav-item nav-link <%= path === '/search' ? 'active' : '' %>" href="/search">Search</a>               
+                <a class="nav-item nav-link <%= path === '/about' ? 'active' : '' %>" href="/about">About</a>               
             </div>
         </div>
     </nav>
