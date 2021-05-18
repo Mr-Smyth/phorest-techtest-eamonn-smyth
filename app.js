@@ -1,10 +1,15 @@
+// ====== REQUIRES ======
 const express = require('express');
 
-const app = express();
+// ------ REGISTER ROUTES ------
 
-app.get('/', (req, res, next) => {
-    console.log('Welcome to Node Express!!');
-    res.send('<html><body><h1>Home page test</h1></body></html>')
-});
+const app = express();
+const mainRoutes = require('./routes/main');
+
+// SETUP OUR EJS TEMPLATES
+app.set('view engine', 'ejs');
+
+// OUTSOURCED ROUTES
+app.use('/', mainRoutes);
 
 app.listen(3000);
