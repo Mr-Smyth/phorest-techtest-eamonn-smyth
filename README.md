@@ -92,7 +92,7 @@ The following wireframes were used to layout this project, but with plenty of li
 
 + [home page](https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth/blob/main/docs/wireframes/home.pdf)
 + [Search page](https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth/blob/main/docs/wireframes/client-search.pdf)
-+ [Voucher page](https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth/blob/main/docs/wireframes/voucher.pdf)
++ [Voucher page](https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth/blob/main/docs/wireframes/create-voucher.pdf)
 + [About page](https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth/blob/main/docs/wireframes/about.pdf)
 
 [<< Back to Index <<](#index)
