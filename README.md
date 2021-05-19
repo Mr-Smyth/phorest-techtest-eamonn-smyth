@@ -33,7 +33,9 @@ Build a web application to utilize the Phorest platform and interact with their 
 I will build this application using NodeJs using express. I have chosen this as it is obviously using JavaScript which is fundemental to the requirements of the role. I considered using Python with perhaps flask or even Django having recently built applications with these libraries/frameworks. However i am currently learning NodeJs and i do like to push myself to use and learn new tech.   
 
 NodeJS is asynchronous and event driven. It has 'non-blocking' capabilities that allow it to scale to a large number of requests without being slowed down by a few expensive connections.   
-Also NodeJs by nature will allow me to keep my code more modularized and as a result easier to expand on or modify in the future if required.
+Also NodeJs by nature will allow me to keep my code more modularized and as a result easier to expand on or modify in the future if required.  
+
+I will be using Git version control, with Projects to manage the workflow.
 
 [<< Back to Index <<](#index)
 
@@ -99,6 +101,23 @@ The following wireframes were used to layout this project, but with plenty of li
 
 # Features
 
+### Common features
+A site common Navigation and footer
+
+### Home Page
+
+The home page is very simple and clear in what it intends. A call to action button invites the user to get started, also a site introduction explains the process to the user.
+
+### Search Page
+
+The Search page has a clearly defined 2 option search method. You can search by either the phone number or by the email address. Once the user enters valid information and clicks the search button, the request will be processed and results will be displayed.   
+
+The results will be displayed on top of the original search window, leaving the option to search again if required.   
+
+The user can then select a client from the list of results and they will be taken to the voucher creation page.   
+
+Any search that returns no results will explain this to the user clearly, and give the option to search again.
+
 [<< Back to Index <<](#index)
 
 
@@ -107,10 +126,11 @@ This application uses the following Technologies:
 + [NodeJs](https://nodejs.org/en/docs/)
 + [ExpressJs](https://expressjs.com/)
 + [EJS](https://ejs.co/)
++ [Axios](https://github.com/axios/axios)
 + [HTML5](https://en.wikipedia.org/wiki/HTML5)
 + [CSS](https://en.wikipedia.org/wiki/CSS)
 + [Vanilla Javascript](https://www.javascript.com/)
-+ [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
++ [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
 
 [<< Back to Index <<](#index)
 
