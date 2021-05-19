@@ -113,6 +113,7 @@ a:hover {
     margin-bottom: 1rem;
     opacity: 1;
     transition: all 0.40s ease-in-out;
+    white-space: wrap;
 }
 
 .search-result:hover {
@@ -121,7 +122,11 @@ a:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.404-container {
-    heig
+.sitemap-link {
+    color: var(--primary-color);
+    transition: all 0.40s ease-in-out;
+}
 
+.sitemap-link:hover {
+    color: var(--supplementary-color-1);
 }

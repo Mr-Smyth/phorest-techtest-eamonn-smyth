@@ -20,8 +20,8 @@
                     <div class="d-flex w-100 justify-content-between">
                         <% if (search === null) { %>
                             <h5 class="m-auto">Sorry but what you entered was incorrect. Click to search again</h5>
-                        <% } else { %>
-                            <h5 class="m-auto">Sorry we found no results for '<%= search %>'. Click to search again</h5>
+                        <% } else { %> 
+                            <h5 class="m-auto text-break">Sorry we found no results for <strong><em>'<%= search %>'</em></strong>. Click to search again</h5>
                         <% } %>
                     </div>
                 </a>
@@ -31,7 +31,8 @@
             <!-- for case where results were found, we will display them in a list of links -->
             <% clients.forEach(client => { %>
                 <div class="list-group">
-                    <a href="#" class="search-result flex-column align-items-start">
+                    <!-- i want to pass original search method back to vouchers -->
+                    <a href="/voucher/<%= search %>" class="search-result flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
                             <h4 class="mb-1"><%= client.firstName %> <%= client.lastName %></h4>
                         </div>
@@ -50,7 +51,7 @@
     <!-- ====== MAIN CONTENT ======  -->
 
     <!-- We reuse this section when results are displayed - heading message changes depending on clients being present -->
-    <main id="search" class="container main__container flex-grow-1 mt-5 w-75">
+    <main id="search" class="container main__container flex-grow-1 mt-5 col-12 col-md-10">
         <!-- if not equal to none - then we are on search results page. so we ask to search again -->
         <% if (clients != 'none') { %>
             <h2 class="main__heading">Search again</h2>
