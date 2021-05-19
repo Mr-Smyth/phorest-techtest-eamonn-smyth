@@ -1,24 +1,25 @@
+<!-- ====== INCLUDE HEAD ====== -->
 <%- include('./includes/head.ejs') %>
 </head>
 
 <!-- Align footer using flex -->
 <body class="d-flex flex-column min-vh-100">
 
-    <!-- Main navigation bar -->
+    <!-- ====== INCLUDE NAVIGATION BAR ====== -->
     <%- include('./includes/navigation.ejs') %>
     
 
     <!-- ====== MAIN CONTENT ======  -->
 
-    <main class="container flex-grow-1">
-        <h1><%= pageTitle %></h1>
-        <h3>Sorry but </h3>
-        <div class="h-100 row align-items-center">
-            <div class="col" style="background:red">
-              TEXT
-            </div>
-          </div>
-        
+    <main class="container flex-grow-1 mt-5">
+      <div class="row col-10 offset-1 justify-content-center pr-0">
+        <div class="col-sm-12 col-md-6 text-center">
+          <h1 class="main__heading"><%= pageTitle %></h1>
+          <h2>Sorry but the page you are looking for does not exist anymore</h2>
+          <a href="/" class="btn cta-button margin-auto mt-5">Return to Home Page</a>
+        </div>
+      </div>
     </main>
+  
 
 <%- include('./includes/end.ejs') %>

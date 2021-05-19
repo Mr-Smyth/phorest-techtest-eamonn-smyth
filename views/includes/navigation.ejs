@@ -1,14 +1,17 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="nav__logo ml-5">
+        <div class="nav__logo ml-md-5">
             <a href="/"><span>Voucher Store</span></a>
         </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHamburger"
+
+        <!-- ====== MENU HAMBURGER TOGGLER ====== -->
+        <button class="navbar-toggler mr-md-5" type="button" data-toggle="collapse" data-target="#navbarHamburger"
             aria-controls="navbarHamburger" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         
-        <div class="collapse navbar-collapse justify-content-end" id="navbarHamburger">
+        <!-- ====== NAVIGATION ====== -->
+        <div class="collapse navbar-collapse justify-content-end mr-md-5" id="navbarHamburger">
             <div class="navbar-nav text-center ">
                 <a class="nav-item nav-link <%= path === '/index' ? 'active' : '' %>" href="/">Home</a>
                 <a class="nav-item nav-link <%= path === '/search' ? 'active' : '' %>" href="/search">Search</a>               

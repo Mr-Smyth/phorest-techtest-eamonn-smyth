@@ -65,14 +65,15 @@ a:hover {
     margin-top: 8rem;
 }
 
-.hero__jumbotron a{
+.cta-button{
     font-size: 1.6rem;
     border-radius: 0.6rem;
     background-color: #FF9900;
     font-family: var(--secondary-font);
+    transition: all 0.40s ease-in-out;
 }
 
-.hero__jumbotron a:hover{
+.cta-button:hover{
     background-color: #d47f00;
     color: var(--supplementary-color-1);
     
@@ -118,4 +119,9 @@ a:hover {
     background-color: var(--supplementary-color-1);
     color: var(--supplementary-color-3);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.404-container {
+    heig
+
 }
