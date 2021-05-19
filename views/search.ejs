@@ -7,17 +7,27 @@
     <!-- Main navigation bar -->
     <%- include('./includes/navigation.ejs') %>
     
+    <% if (clients.length > 0) {%>
+    <div class="jumbotron search__jumbotron w-75">
+        <div class="container text-center">
+            <%= clients %>
+        </div>
+    </div>
+    <% } %>
 
     <!-- ====== MAIN CONTENT ======  -->
 
-    <main class="container main__container flex-grow-1 mt-5">
-        <h1 class="main__heading"><%= pageTitle %></h1>
-
+    <main class="container main__container flex-grow-1 mt-5 w-75">
+        <% if (clients.length > 0) { %>
+            <h1 class="main__heading">Search again</h1>
+        <% } else { %>
+            <h1 class="main__heading"><%= pageTitle %></h1>
+        <% } %>
         <div class="container text-center">
-            <form class="form-inline row no-gutters">
+            <form class="form-inline row no-gutters" action="/client-search" method="POST">
                 <div class="col-12 col-md-6 ml-auto  form-group mb-2">
-                    <label for="phone-number" class="sr-only">Phone Number</label>
-                    <input type="number" class="form-control col-12 col-md-10" name="phone-number" id="phone-number" placeholder="Enter a Phone Number">
+                    <label for="phone" class="sr-only">Phone Number</label>
+                    <input type="number" class="form-control col-12 col-md-10" name="phone" id="phone" placeholder="Enter a Phone Number">
                 </div>
                 <button type="submit" class="btn btn-primary col-12 col-md-4 mr-auto mb-2">Search Numbers</button>
             </form>
