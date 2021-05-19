@@ -1,6 +1,7 @@
 // ====== REQUIRES ======
 const path = require('path');
 const express = require('express');
+const bodyParser = require('body-parser');
 
 
 // ------ REGISTER ROUTES ------
@@ -8,6 +9,9 @@ const express = require('express');
 const app = express();
 const mainRoutes = require('./routes/main');
 const errorController = require('./controllers/error');
+
+// PARSE THE BODY CONTENT
+app.use(bodyParser.urlencoded({extended: false}));
 
 // TELL EXPRESS TO LOOK IN PUBLIC FOLDER FOR LOCAL ASSETS
 app.use(express.static(path.join(__dirname, 'public')));

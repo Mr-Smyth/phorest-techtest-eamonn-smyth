@@ -7,6 +7,7 @@
   --secondary-color: silver;
   --supplementary-color-1: #e4d8c9;
   --supplementary-color-2: #9b7d59;
+  --supplementary-color-3: #614b30;
   --content-colour-1: #444444;
 
   /* Typography variables */
@@ -28,9 +29,10 @@ body {
     flex-direction: column;
 }
 
-a, a:hover, a:focus, a:active {
+a, a:hover, a:active {
     text-decoration: none;
-    color: var(--primary-color); 
+    color: var(--primary-color);
+    transition: all 0.30s ease-in-out;
 }
 
 a:hover {
@@ -99,4 +101,21 @@ a:hover {
     opacity: 0.9;
     padding: 2rem;
     border-radius: 0.2rem;
+}
+
+.search-result {
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 5px 10px, rgba(17, 17, 26, 0.1) 0px 0px 10px;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    background-color: var(--supplementary-color-2);
+    color: #222222;
+    margin-bottom: 1rem;
+    opacity: 1;
+    transition: all 0.40s ease-in-out;
+}
+
+.search-result:hover {
+    background-color: var(--supplementary-color-1);
+    color: var(--supplementary-color-3);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

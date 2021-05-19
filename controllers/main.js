@@ -1,6 +1,6 @@
 // ====== IMPORTS ======
 const axios = require('axios');
-
+require('dotenv').config();
 
 
 // ====== CONTROLLERS ======
@@ -17,30 +17,46 @@ exports.getSearch = (req, res, next) => {
     res.render('search', {
         pageTitle: 'Client Search',
         path :'/search',
-        clients: []
+        clients: 'none'
     });
 };
 
 exports.postClientSearch = (req, res, next) => {
-    axios.get('https://api-gateway-dev.phorest.com/third-party-api-server/api/business/eTC3QY5W3p_HmGHezKfxJw/client?phone=353858624723', {
-        auth: {
-            username: 'global/cloud@apiexamples.com',
-            password: 'VMlRo/eh+Xd8M~l'
+    // Sort out what search we are getting and assign it to a search variable
+    const searchedPhone = req.body.phone;
+    const searchedEmail = req.body.email;
+    let search = (searchedPhone)? `phone=${searchedPhone}`:(searchedEmail)? `email=${searchedEmail}`: '' ;
+
+    // if (searchedPhone) {
+    //     search = `phone=${searchedPhone}`;
+    // }
+    // else if (searchedEmail) {
+    //     search = `email=${searchedEmail}`;
+    // }
+    axios.get(`https://api-gateway-dev.phorest.com/third-party-api-server/api/business/eTC3QY5W3p_HmGHezKfxJw/client?${search}`, {
+        auth :{
+            username: process.env.USER,
+            password: process.env.PASSWORD
         }
     })
     .then(response => {
-        console.log(response.status); // 200
-        console.log(response.data._embedded.clients);
-        return response.data._embedded.clients;
+        return response.data;
     })
-    .then(clients => {
+    .then(data => {
+        let clients = [];
+        // check if we got any data from the search - if yes assign it to clients
+        if (data.page.size > 0) {
+            clients = data._embedded.clients;
+        }
+        // render the results
         res.render('search', {
             pageTitle: 'Client Search',
             path :'/search',
-            clients: clients 
+            search: search,
+            clients: clients
         });
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log("beep"));
 }
 
 exports.getVoucher = (req, res, next) => {
