@@ -1,6 +1,7 @@
 // ====== IMPORTS ======
 const axios = require('axios');
 const axiosHelpers = require('../utils/axios');
+const dateHelpers = require('../utils/dates');
 require('dotenv').config();
 
 
@@ -87,7 +88,6 @@ exports.getVoucher = (req, res, next) => {
     axiosHelpers.getClients(search)    
     .then(response => {
         // our response should include an object containing our client
-        console.log(response)
         let client = [];
         // check if we got any data from the search - if yes assign it to clients
         if (response) {
@@ -103,21 +103,125 @@ exports.getVoucher = (req, res, next) => {
     .catch(err => console.log(err));
 };
 
-/**
- * Handle Voucher creation
- * 
- * @param {*} req 
- * @param {*} res 
- * @param {*} next 
- */
+
+
+
 exports.postCreateVoucher = (req, res, next) => {
-    const success = true;
-    res.render('voucher', {
-        pageTitle: (success)? 'Voucher Created': 'Error Creating voucher',
-        path :'/voucher-create',
-        clients: null
-    });
+    let voucher = {};
+    let success = false;
+
+    const clientId = req.body.clientId;
+    const amount = req.body.amount;
+
+    // get the client - as i want to personalise the response with the clients name
+    const search = `client/${clientId}`;
+    axiosHelpers.getClients(search)    
+    .then(response => {
+        // our response should include an object containing our client
+        let client = [];
+        // check if we got any data from the search - if yes assign it to clients
+        if (response) {
+            client = response;
+        }
+        return client;
+    })
+    .then(client => {
+        // setup our voucher data
+        let voucherData = {
+                        clientId: clientId,
+                        creatingBranchId: process.env.BRANCH_ID,
+                        expiryDate: dateHelpers.nextYearISOS,
+                        issueDate: dateHelpers.todayISOS,
+                        originalBalance: amount
+                    }
+
+        // post the voucher
+        axiosHelpers.postVoucher(voucherData)   
+        .then(response => {
+            voucher = {voucherData: response.data, client: client}
+            success = true;
+
+            res.render('voucher', {
+                pageTitle: (success)? 'Voucher Created!': 'Error Creating voucher',
+                path :'/voucher-create',
+                voucher: voucher
+            });
+        })
+    })
+    .catch(error => console.error(error));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// exports.postCreateVoucher = (req, res, next) => {
+//     let success = false;
+    
+//     // get the ClientId from the request body
+//     const clientId = req.body.clientId;
+
+//     // get the client - as i want to personalise the response with the clients name
+//     const search = `client/${clientId}`;
+//     axiosHelpers.getClients(search)    
+//     .then(response => {
+//         // our response should include an object containing our client
+//         let client = [];
+//         // check if we got any data from the search - if yes assign it to clients
+//         if (response) {
+//             client = response;
+//         }
+//         return client;
+//     })
+//     .then(client => {
+//         // create the voucher
+        
+//         const params = new URLSearchParams()
+//         params.append('clientId', 'clientId')
+//         params.append('creatingBranchId', 'process.env.BRANCH_ID')
+//         params.append('expiryDate', '2099-09-19T09:19:11.221Z')
+//         params.append('issueDate', '2098-09-19T09:19:11.221Z')
+//         params.append('originalBalance', 50.23)
+
+
+
+//         // const voucherData = {
+//         //     clientId: clientId,
+//         //     creatingBranchId: process.env.BRANCH_ID,
+//         //     expiryDate: '2099-09-19T09:19:11.221Z',
+//         //     issueDate: '2098-09-19T09:19:11.221Z',
+//         //     originalBalance: '50.23'
+//         // }
+
+        
+//         axiosHelpers.postVoucher()
+//     // })
+   
+        
+//         success = true;
+
+
+
+//         res.render('voucher', {
+//             pageTitle: (success)? 'Voucher Created!': 'Error Creating voucher',
+//             path :'/voucher-create',
+//             clients: client
+//         });
+//     })
+//     .catch(err => console.log(err));
+// }
 
 /**
  * Display our About page

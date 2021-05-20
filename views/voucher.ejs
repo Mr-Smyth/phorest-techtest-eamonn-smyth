@@ -29,14 +29,43 @@
                     <!-- <input type="number" class="form-control col-12 col-md-10" name="phone" id="phone" placeholder="Enter a Phone Number" required > -->
                 </div>
                 <!-- Pass the client ID to the req body -->
-                <input type="hidden" name="productId" value="<%= clients.clientId %>">
+                <input type="hidden" name="clientId" value="<%= clients.clientId %>">
                 <button type="submit" class="btn btn-primary col-12 col-md-4 mr-auto mb-2">Search By Phone Number</button>
             </form>
         </div>  
         <% } else { %> 
-            <h1 class="main__heading"><%= pageTitle %></h1>
+            <div class="container">
+                <div class="row col-12 no-gutters justify-content-center">
+                    <h1 class="main__heading"><%= pageTitle %></h1>
+                </div>
+                <div class="row col-12 no-gutters justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="card l-bg-cherry">
+                            <!-- insert trolley icon -->
+                            <div class="card-voucher p-4">
+                                <h1 class="text-center">Gift Voucher</h1>
+                                <div class="card-icon card-icon-large"><i class="fas fa-shopping-cart"></i></div>
+
+                                <div class="row col-12 mt-4 justify-content-around">
+                                    <h4 class="card-title mb-0"><%= voucher.client.firstName %> <%= voucher.client.lastName %></h4>
+                                    <h1 class="d-flex align-items-center mb-0">
+                                        €<%= voucher.voucherData.remainingBalance.toFixed(2) %>
+                                    </h1>
+                                </div>
+                                <div class="d-none d-md-block row col-12 mt-3">
+                                    <small class="text-muted"><p>Card Id: <%= voucher.voucherData.voucherId %></p></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         <% } %>   
+        
     </main>
+
+
 
 
 <%- include('./includes/end.ejs') %>
