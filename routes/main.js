@@ -15,7 +15,10 @@ router.get('/search', mainController.getSearch);
 router.post('/client-search', mainController.postClientSearch);
 
 // Create voucher page
-router.get('/voucher/:search', mainController.getVoucher);
+router.get('/voucher/:clientId', mainController.getVoucher);
+
+// Handle Creating voucher
+router.post('/create-voucher', mainController.postCreateVoucher);
 
 // About page
 router.get('/about', mainController.getAbout);

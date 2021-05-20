@@ -48,16 +48,18 @@ exports.postClientSearch = (req, res, next) => {
     const searchedPhone = req.body.phone;
     const searchedEmail = req.body.email;
     // Ternary just to define our search depending on what the user has entered
-    let search = (searchedPhone)? `phone=${searchedPhone}`:(searchedEmail)? `email=${searchedEmail}`: '' ;
+    let search = (searchedPhone)? `client?phone=${searchedPhone}`:(searchedEmail)? `client?email=${searchedEmail}`: '' ;
 
     // call custom axios util to search clients
     axiosHelpers.getClients(search)    
     .then(response => {
         let clients = [];
+        
         // check if we got any data from the search - if yes assign it to clients
         if (response.page.size > 0) {
             clients = response._embedded.clients;
         }
+        
         // render the results
         res.render('search', {
             pageTitle: 'Client Search',
@@ -77,27 +79,45 @@ exports.postClientSearch = (req, res, next) => {
  * @param {*} next 
  */
 exports.getVoucher = (req, res, next) => {
-    // we pass the original search method from the search results
-    const method = req.params.search;
+    // we pass the selected clients Id from the search results
+    const clientId = req.params.clientId;
 
     // i want to get the client we are creating the voucher for, so i can personalize the template
-    const search = `${method}`;
+    const search = `client/${clientId}`;
     axiosHelpers.getClients(search)    
     .then(response => {
+        // our response should include an object containing our client
+        console.log(response)
         let client = [];
         // check if we got any data from the search - if yes assign it to clients
-        if (response.page.size > 0) {
-            client = response._embedded.clients[0];
+        if (response) {
+            client = response;
         }
         // render the results
         res.render('voucher', {
-            pageTitle: 'Voucher Create',
+            pageTitle: 'Add a Voucher',
             path :'/voucher',
-            clients: client,
+            clients: client
         });
     })
     .catch(err => console.log(err));
 };
+
+/**
+ * Handle Voucher creation
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ */
+exports.postCreateVoucher = (req, res, next) => {
+    const success = true;
+    res.render('voucher', {
+        pageTitle: (success)? 'Voucher Created': 'Error Creating voucher',
+        path :'/voucher-create',
+        clients: null
+    });
+}
 
 /**
  * Display our About page

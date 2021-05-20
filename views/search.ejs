@@ -14,9 +14,10 @@
     <% if (clients != 'none') {%>
     <div class="jumbotron search__jumbotron col-12 col-md-10">
         <h2 class="main__heading">Select a client to create a voucher</h2>
+
         <% if (!clients.length > 0) { %>
             <div class="list-group">
-                <a href="#search" class="search-result flex-column align-items-start">
+                <a href="#phone" class="search-result flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
                         <% if (search === null) { %>
                             <h5 class="m-auto">Sorry but what you entered was incorrect. Click to search again</h5>
@@ -32,9 +33,9 @@
             <% clients.forEach(client => { %>
                 <div class="list-group">
                     <!-- i want to pass original search method back to vouchers -->
-                    <a href="/voucher/<%= search %>" class="search-result flex-column align-items-start">
+                    <a href="/voucher/<%= client.clientId %>" class="search-result flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1"><%= client.firstName %> <%= client.lastName %></h4>
+                            <h4 class="mb-1"><%= client.firstName %> <%= client.lastName %> <%= client.clientId %></h4>
                         </div>
                         <hr>
                         <p><strong>Phone Number: </strong><%= client.mobile %></p>
@@ -63,7 +64,7 @@
         <div class="container text-center">
             <form class="form-inline row no-gutters" action="/client-search" method="POST">
                 <div class="col-12 col-md-6 ml-auto  form-group mb-2">
-                    <label for="phone" class="sr-only">Phone Number</label>
+                    <label for="phone" class="sr-only">Enter Phone Number</label>
                     <input type="number" class="form-control col-12 col-md-10" name="phone" id="phone" placeholder="Enter a Phone Number" required >
                 </div>
                 <button type="submit" class="btn btn-primary col-12 col-md-4 mr-auto mb-2">Search By Phone Number</button>
@@ -74,7 +75,7 @@
         <div class="container text-center mt-5">
             <form class="form-inline row no-gutters" action="/client-search" method="POST">
                 <div class="col-12 col-md-6 ml-auto  form-group mb-2">
-                    <label for="email" class="sr-only">Email Address</label>
+                    <label for="email" class="sr-only">Enter Email Address</label>
                     <input type="text" class="form-control col-12 col-md-10" name="email" id="email" placeholder="Enter an email address" required >
                 </div>
                 <button type="submit" class="btn btn-primary col-12 col-md-4 mr-auto mb-2">Search By Email</button>
