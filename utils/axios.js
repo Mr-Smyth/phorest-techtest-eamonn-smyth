@@ -8,7 +8,7 @@ exports.getClients = async function (search) {
             username: process.env.USER,
             password: process.env.PASSWORD
         }
-    })            ;
+    });
     // return the data object of the response
     return clients.data;
 }

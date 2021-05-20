@@ -22,7 +22,7 @@
                         <% if (search === null) { %>
                             <h5 class="m-auto">Sorry but what you entered was incorrect. Click to search again</h5>
                         <% } else { %> 
-                            <h5 class="m-auto text-break">Sorry we found no results for <strong><em>'<%= search %>'</em></strong>. Click to search again</h5>
+                            <h5 class="m-auto text-break">Sorry we found no results for <strong><em>'<%= search.split('=')[1] %>'</em></strong>. Click to search again</h5>
                         <% } %>
                     </div>
                 </a>
@@ -67,7 +67,7 @@
                     <label for="phone" class="sr-only">Enter Phone Number</label>
                     <input type="number" class="form-control col-12 col-md-10" name="phone" id="phone" placeholder="Enter a Phone Number" required >
                 </div>
-                <button type="submit" class="btn btn-primary col-12 col-md-4 mr-auto mb-2">Search By Phone Number</button>
+                <button type="submit" class="btn search-button col-12 col-md-4 mr-auto mb-2">Search By Phone Number</button>
             </form>
         </div>
 
@@ -78,7 +78,7 @@
                     <label for="email" class="sr-only">Enter Email Address</label>
                     <input type="text" class="form-control col-12 col-md-10" name="email" id="email" placeholder="Enter an email address" required >
                 </div>
-                <button type="submit" class="btn btn-primary col-12 col-md-4 mr-auto mb-2">Search By Email</button>
+                <button type="submit" class="btn search-button col-12 col-md-4 mr-auto mb-2">Search By Email</button>
             </form>
         </div>
         

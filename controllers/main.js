@@ -138,9 +138,13 @@ exports.postCreateVoucher = (req, res, next) => {
         // post the voucher
         axiosHelpers.postVoucher(voucherData)   
         .then(response => {
-            voucher = {voucherData: response.data, client: client}
-            success = true;
-
+            console.log(response);
+            if (response.status === 201) {
+                voucher = {voucherData: response.data, client: client}
+                success = true;
+            } else {
+                success = false;
+            }
             res.render('voucher', {
                 pageTitle: (success)? 'Voucher Created!': 'Error Creating voucher',
                 path :'/voucher-create',

@@ -65,7 +65,8 @@ a:hover {
     margin-top: 8rem;
 }
 
-.cta-button{
+.cta-button,
+.action-button {
     font-size: 1.6rem;
     border-radius: 0.6rem;
     background-color: #FF9900;
@@ -73,14 +74,31 @@ a:hover {
     transition: all 0.40s ease-in-out;
 }
 
-.cta-button:hover{
+.cta-button:hover,
+.action-button:hover{
     background-color: #d47f00;
-    color: var(--supplementary-color-1);
-    
+    color: var(--supplementary-color-1);  
+}
+
+.action-button {
+    font-size: 1.2rem;
+}
+
+.search-button{
+    font-size: 1.1rem;
+    border-radius: 0.2rem;
+    background-color: var(--supplementary-color-2);
+    font-family: var(--secondary-font);
+    transition: all 0.40s ease-in-out;
+}
+
+.search-button:hover{
+    background-color: var(--supplementary-color-3);
+    color: var(--supplementary-color-1);  
 }
 
 .main__container {
-    background-color: var(--secondary-color);
+    background-color: var(--supplementary-color-1);
     color: var(--content-colour-1);
     opacity: 0.9;
     padding: 2rem;
