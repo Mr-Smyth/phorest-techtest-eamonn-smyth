@@ -140,6 +140,15 @@ This application uses the following Technologies:
 
 # Testing
 
+Having not used automated testing in a project before, i decided to learn [JEST](https://jestjs.io/) for this application.   
+
+I tried to implement meaningful automated tests using [JEST](https://jestjs.io/). However, I found that i needed to move the calls to the axios helper method, out of the controller and into a helper file. This gave me a function that returns something i could easily test.    
+But i quickly found the code was repeating itself, due to needing to deal with promises wherever i required the client data. Also i then had a controller passing to a helper, passing to another helper and back again, which i found very untidy, so decided against it.  
+
+I found this quite frustrating and the result was that the only tests i could write directly tested calls to the Phorest REST API, which i had replaced with a mocked call so as not to bombard the API which is not good practice in testing. The result of this was i was essentially testing my own mock function, which was pointless.   
+
+So unfortunately, i decided to abandon automated testing for this application, and continue with manual testing of code and templates.
+
 [<< Back to Index <<](#index)
 
 # Credits
