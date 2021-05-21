@@ -2,6 +2,7 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
+const favicon = require('serve-favicon');
 
 
 // ------ REGISTER ROUTES ------
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // TELL EXPRESS TO LOOK IN PUBLIC FOLDER FOR LOCAL ASSETS
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(favicon(path.join(__dirname, 'public', 'favicons', 'favicon.ico')));
 
 // SETUP OUR EJS TEMPLATES
 app.set('view engine', 'ejs');
