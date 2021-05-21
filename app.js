@@ -5,8 +5,8 @@ const bodyParser = require('body-parser');
 
 
 // ------ REGISTER ROUTES ------
-
 const app = express();
+const port = process.env.PORT || 3000;
 const mainRoutes = require('./routes/main');
 const errorController = require('./controllers/error');
 
