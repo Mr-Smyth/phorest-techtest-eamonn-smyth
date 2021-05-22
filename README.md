@@ -102,12 +102,6 @@ For the rest of the content i used a mixture of Nunito and Poppins.
 
 [<< Back to Index <<](#index)
 
-## Styling
-
-I went for a fairly dark theme
-
-[<< Back to Index <<](#index)
-
 ## Wireframes
 
 The following wireframes were used to layout this project, but with plenty of light fonts and a feel good hero image in the background. Overall i feel the colours and images give a feeling of professional, but yet the feel good factor of a late summer evening.
@@ -167,7 +161,7 @@ To run this project on your own IDE follow the instructions below:
 + Git Installed
 
 ### Instructions
-+ Save a copy of the github repository located at https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth by clicking the "Code" button then selecting the "download zip" button at the top of the page and extracting the zip file to your chosen folder. 
++ Save a copy of the github repository located at https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth by clicking the "Code" button then selecting the [**download zip**](https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth/archive/refs/heads/main.zip) button at the top of the page and extracting the zip file to your chosen folder. 
 + Unzip download into preferred directory.
 
 ---
@@ -185,9 +179,11 @@ To run this project on your own IDE follow the instructions below:
 This project uses .env variables. 
 + Create a .env file in the root of the project, and create the following variables:
 
-USER='***<API-User-here>***'
-PASSWORD='***<API-Password-here>***'
-BRANCH_ID='***<API-BranchId-here>***'
+```
+USER='**API-User-here**'.   
+PASSWORD='**API-Password-here**'.   
+BRANCH_ID='**API-BranchId-here**'
+```
 
 ### Run the Application locally
 
