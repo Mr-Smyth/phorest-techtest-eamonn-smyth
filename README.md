@@ -290,6 +290,7 @@ All pages were checked for errors in the console, and no errors were found.
 # Credits
 
 + Unsplash - for the background hero image.
++ Phorest platform - for the REST API
 
 
 [<< Back to Index <<](#index)
