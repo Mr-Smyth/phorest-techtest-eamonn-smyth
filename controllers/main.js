@@ -1,11 +1,10 @@
+/*jshint esversion: 6 */ 
 // ====== IMPORTS ======
-const axios = require('axios');
 const axiosHelpers = require('../utils/axios');
 const dateHelpers = require('../utils/dates');
 require('dotenv').config();
 
 // ====== CONTROLLERS ======
-
 
 /**
  * Display our Home Page controller
@@ -72,7 +71,7 @@ exports.postClientSearch = (req, res, next) => {
         });
     })
     .catch(err => console.log(err));
-}
+};
 
 /**
  * Display our Voucher create page
@@ -140,14 +139,13 @@ exports.postCreateVoucher = (req, res, next) => {
                         expiryDate: dateHelpers.nextYearISOS,
                         issueDate: dateHelpers.todayISOS,
                         originalBalance: amount
-                    }
+                    };
 
         // post the voucher
         axiosHelpers.postVoucher(voucherData)   
         .then(response => {
-            console.log(response);
             if (response.status === 201) {
-                voucher = {voucherData: response.data, client: client}
+                voucher = {voucherData: response.data, client: client};
                 success = true;
             } else {
                 success = false;
@@ -157,10 +155,10 @@ exports.postCreateVoucher = (req, res, next) => {
                 path :'/voucher-create',
                 voucher: voucher
             });
-        })
+        });
     })
     .catch(error => console.error(error));
-}
+};
 
 
 /**

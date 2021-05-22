@@ -136,6 +136,68 @@ This application uses the following Technologies:
 
 # Deployment
 
+## How to run this project locally
+
+To run this project on your own IDE follow the instructions below:
+
+### Requiremants 
+
++ An IDE such as Visual Studio Code.
++ Node installed
++ Git Installed
+
+### Instructions
++ Save a copy of the github repository located at https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth by clicking the "Code" button then selecting the "download zip" button at the top of the page and extracting the zip file to your chosen folder. 
++ Unzip download into preferred directory.
+
+---
+
+***If you have Git installed on your system, you can clone the repository by opening a bash terminal in your chosen directory, and enter the following command:***
++ `git clone https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth.git`
+
+--- 
+
++ Open your code editor and open the project.
++ Open a terminal and run: `npm install'.
+
+### ENV variables
+
+This project uses .env variables. 
++ Create a .env file in the root of the project, and create the following variables:
+
+USER='***<API-User-here>***'
+PASSWORD='***<API-Password-here>***'
+BRANCH_ID='***<API-BranchId-here>***'
+
+### Run the Application locally
+
++ In the Terminal or your code editor run: `npm start`
++ Open a browser, and type: `http://localhost:3000/` into the address bar.
+
+**- Project is now deployed locally.**
+
+
+##  Deploy to Heroku:
+
+### Prepare Github
+
++ Make sure the project is upto date on github and all changes have been pushed.
+
+### In Heroku - Deploy using Github
+
++ Setup and account and log in to Heroku
++ On the apps page select `NEW`.
++ Give the app a name and select the closest region – then click `Create App`.
++ Goto the deploy tab
++ Set deployment method to GitHub
++ Search for ehand
++ Click connect
++ Scroll down and click Enable Automatic Deploys
++ Select the master branch.
++ Click Deploy branch
+
+**- The project will be now deployed to heroku, and any further git pushes will update heroku automatically. An open app button at the top of the page will take you to the deployed site.**
+
 [<< Back to Index <<](#index)
 
 # Testing
@@ -148,6 +210,43 @@ But i quickly found the code was repeating itself, due to needing to deal with p
 I found this quite frustrating and the result was that the only tests i could write directly tested calls to the Phorest REST API, which i had replaced with a mocked call so as not to bombard the API which is not good practice in testing. The result of this was i was essentially testing my own mock function, which was pointless.   
 
 So unfortunately, i decided to abandon automated testing for this application, and continue with manual testing of code and templates.
+
+## Manual Testing:
+
+Multiple calls were made to the API using the application. It handles 404 pages gracefully and every page has a clear indication showing the user at what stage they are at.
+
+For this application i did not have time to complete a full documentation with images of the testing carried out. But see below for a summary of the testing carried out.
+
+
+<details>
+<summary>Responsivness Testing</summary>
+
+| Function                  |                 Browser                  | Result |
+| ------------------------- | :--------------------------------------: | -----: |
+| Homepage Resposivness     | Chrome / Firefox / Safari / Opera / Edge |   Pass |
+| Search Responsiveness     | Chrome / Firefox / Safari / Opera / Edge |   Pass |
+| Voucher Responsivness     | Chrome / Firefox / Safari / Opera / Edge |   Pass |
+| About Responsivness       | Chrome / Firefox / Safari / Opera / Edge |   Pass |
+| Navbar                    | Chrome / Firefox / Safari / Opera / Edge |   Pass |
+
+</details>
+
+<details>
+<summary>Code Quality Testing</summary>
+
+| Function                  |                 Testing resource                      | Result |
+| ------------------------- | :---------------------------------------------------: | -----: |
+| Templates                 | [validator.w3.org](https://validator.w3.org/)         |   Pass |
+| CSS                       | [jigsaw.w3.org](https://jigsaw.w3.org/css-validator/) |   Pass |
+| CSS prefixed by           | [Autoprefixer](https://autoprefixer.github.io/)       |   Pass |
+| Javascript                | [Js Hint](https://jshint.com/)                        |   Pass |
+
+
+
+</details>
+
+### Testing of ejs/Html
+Tested all views using [validator.w3.org](https://validator.w3.org/) 
 
 [<< Back to Index <<](#index)
 

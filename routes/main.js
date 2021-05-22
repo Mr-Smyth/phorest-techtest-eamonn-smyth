@@ -1,4 +1,4 @@
-
+/*jshint esversion: 6 */ 
 // ====== REQUIRES ======
 const express = require('express');
 const mainController = require('../controllers/main');

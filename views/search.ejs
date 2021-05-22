@@ -9,7 +9,6 @@
     <%- include('./includes/navigation.ejs') %>
     
     <!-- ====== SEARCH RESULTS ====== -->
-
     <!-- for case - where no client data or incorrect search input -->
     <% if (clients != 'none') {%>
     <div class="jumbotron search__jumbotron col-12 col-md-10">
@@ -50,7 +49,6 @@
     <% } %>
 
     <!-- ====== MAIN CONTENT ======  -->
-
     <!-- We reuse this section when results are displayed - heading message changes depending on clients being present -->
     <main id="search" class="container main__container flex-grow-1 mt-5 col-12 col-md-10">
         <!-- if not equal to none - then we are on search results page. so we ask to search again -->
@@ -81,7 +79,7 @@
                 <button type="submit" class="btn search-button col-12 col-md-4 mr-auto mb-2">Search By Email</button>
             </form>
         </div>
-        
     </main>
 
+<!-- ====== INCLUDE FOOTER ====== -->
 <%- include('./includes/end.ejs') %>
