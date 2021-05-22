@@ -192,6 +192,7 @@ BRANCH_ID='**API-BranchId-here**'
 
 **- Project is now deployed locally.**
 
+[<< Back to Index <<](#index)
 
 ##  Deploy to Heroku:
 
@@ -206,7 +207,7 @@ BRANCH_ID='**API-BranchId-here**'
 + Give the app a name and select the closest region – then click `Create App`.
 + Goto the deploy tab
 + Set deployment method to GitHub
-+ Search for ehand
++ Search for The name of the project on github
 + Click connect
 + Scroll down and click Enable Automatic Deploys
 + Select the master branch.
