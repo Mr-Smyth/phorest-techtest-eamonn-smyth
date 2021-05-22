@@ -1,6 +1,13 @@
 # Phorest Technical Test
-+ Submitted by: Eamonn Smyth
 
+
+![Voucher-Store Image](https://i.ibb.co/KGwcvdS/phorest-tech-test.png)
+
+---
+
+[View the Application Deployed using Heroku](https://phorest-techtest-eamonn-smyth.herokuapp.com/)   
+
+---
 # Index
 
 - [UX](#ux)
@@ -16,11 +23,24 @@
   * [Styling](#styling)
   * [Wireframes](#wireframes)
 - [Features](#features)
+    + [Common features](#common-features)
+    + [Home Page](#home-page)
+    + [Search Page](#search-page)
 - [Technologies Used](#technologies-used)
 - [Deployment](#deployment)
+  * [How to run this project locally](#how-to-run-this-project-locally)
+    + [Requiremants](#requiremants)
+    + [Instructions](#instructions)
+    + [ENV variables](#env-variables)
+    + [Run the Application locally](#run-the-application-locally)
+  * [Deploy to Heroku:](#deploy-to-heroku-)
+    + [Prepare Github](#prepare-github)
+    + [In Heroku - Deploy using Github](#in-heroku---deploy-using-github)
 - [Testing](#testing)
+  * [Manual Testing:](#manual-testing-)
 - [Credits](#credits)
 - [Contact](#contact)
+
 
 --- 
 
@@ -217,6 +237,11 @@ Multiple calls were made to the API using the application. It handles 404 pages 
 
 For this application i did not have time to complete a full documentation with images of the testing carried out. But see below for a summary of the testing carried out.
 
+All pages were checked for errors in the console, and no errors were found.  
+
+### Manual Testing Results
+
+---
 
 <details>
 <summary>Responsivness Testing</summary>
@@ -229,7 +254,8 @@ For this application i did not have time to complete a full documentation with i
 | About Responsivness       | Chrome / Firefox / Safari / Opera / Edge |   Pass |
 | Navbar                    | Chrome / Firefox / Safari / Opera / Edge |   Pass |
 
-</details>
+</details>   
+
 
 <details>
 <summary>Code Quality Testing</summary>
@@ -242,15 +268,32 @@ For this application i did not have time to complete a full documentation with i
 | Javascript                | [Js Hint](https://jshint.com/)                        |   Pass |
 
 
+</details>
+
+
+<details>
+<summary>User Stories tested</summary>
+
+|                                    User Story                                       | Achieved |
+| --------------------------------------------------------------------------------    | -------: |
+| As a user i want to be able to search the clients by phone number or email address  |   Yes   |
+| As a user, when i search i want to get back a list of all the possible results      |   Yes   |
+| As a user i want to be able to create a voucher for a found client                  |   Yes   |
+| As a user i want to be notified of a successful voucher creation                    |   Yes   |
+
 
 </details>
 
-### Testing of ejs/Html
-Tested all views using [validator.w3.org](https://validator.w3.org/) 
+---
+
+
 
 [<< Back to Index <<](#index)
 
 # Credits
+
++ Unsplash - for the background hero image.
+
 
 [<< Back to Index <<](#index)
 
