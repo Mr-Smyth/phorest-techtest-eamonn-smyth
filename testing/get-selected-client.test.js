@@ -1,4 +1,7 @@
-const controllers = require('./controllers/main');
+// explain route from test file to mock folder
+jest.mock('../utils/axios-fetch')
+
+const controllers = require('../controllers/main');
 
 // pass in a dummy req object to satisfy the search logic
 const req = {
