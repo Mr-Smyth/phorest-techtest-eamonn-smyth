@@ -12,7 +12,12 @@ exports.getClientSearch = function (search) {
     .then(response => {
         return response
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+        console.log(`Error: There was a ${err.response.data.status} response`);
+        console.log(`* The error is "${err.response.data.error}"`);
+        console.log(`* Error: The error message is "${err.response.data.message}"`);
+        return null;
+    });
 };
 
 // Making a seperate call for this as the returned data format i want to test is different when fetching a client by id
@@ -27,7 +32,12 @@ exports.getClientById = function (search) {
     .then(response => {
         return response
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+        console.log(`Error: There was a ${err.response.data.status} response`);
+        console.log(`* The error is "${err.response.data.error}"`);
+        console.log(`* Error: The error message is "${err.response.data.message}"`);
+        return null;
+    });
 };
 
 // Handle Voucher creation post requests
@@ -41,6 +51,11 @@ exports.postVoucher = function (voucherData) {
     .then(response => {
         return response
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+        console.log(`Error: There was a ${err.response.data.status} response`);
+        console.log(`* The error is "${err.response.data.error}"`);
+        console.log(`* Error: The error message is "${err.response.data.message}"`);
+        return null;
+    });
 };
 

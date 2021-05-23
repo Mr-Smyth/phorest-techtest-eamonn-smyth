@@ -30,12 +30,16 @@ exports.postClientSearch = (req, res, next) => {
     return axiosHelpers.getClientSearch(search)    
     .then(response => {
         let clients = {}
-        if (response.data.page.size > 0) {
-            clients = response.data._embedded.clients
+        if (response === null) {
+            return res.redirect('/?error=Sorry but we could not complete this Client search. This is because the request to the service provider is currently unavailable. Please try again later or contact support for assistance.');
+        }
+        else if (response.data.page.size > 0) {
+            clients = response.data._embedded.clients;
         }
         // i want to include the original search in the template - so i will include it in the client
-        clients.search = search
-        return clients
+        clients.search = search;
+        return clients;
+
     })
     .catch(err => console.log(err));
 };
@@ -62,7 +66,10 @@ exports.getAddVoucher = (req, res, next) => {
 
     return axiosHelpers.getClientById(search)    
     .then(response => {
-        if (response.status === 200) {
+        if (response === null) {
+            return res.redirect('/?error=Sorry but we were unable to select the required client because the request to the service provider is currently unavailable. Please try again later or contact support for assistance.');
+        }
+        else if (response.status === 200) {
             clients = response.data;
             clients.status = response.status;
         }
@@ -73,7 +80,6 @@ exports.getAddVoucher = (req, res, next) => {
     })
     .catch(err => console.log(err));
 };
-
 
 /**
  * Handle creating a voucher
@@ -98,8 +104,13 @@ exports.postCreateVoucher = (req, res, next) => {
     const search = `client/${clientId}`;
     return axiosHelpers.getClientById(search)    
     .then(response => {
-        // check if we got any data from the search - if yes assign it to client      
-        if (response.status === 200) {
+        // check if we got any data from the search - if yes assign it to client   
+        // first check for errors
+        if (response === null) {
+            // deal with the redirect after the call to postVoucher
+            return;
+        }   
+        else if (response.status === 200) {
             client = response.data;
         }
         return client;
@@ -120,7 +131,10 @@ exports.postCreateVoucher = (req, res, next) => {
 
         // I want to return a voucher object with the voucher, client and a success flag
         .then(response => {
-            if (response.status === 201) {
+            if (response === null) {
+                return res.redirect('/?error=Sorry but we were unable to create the voucher for your client because the request to the service provider is currently unavailable. Please try again later or contact support for assistance.');
+            }
+            else if (response.status === 201) {
                 voucher.voucherData = response.data;
                 voucher.client = client;
                 voucher.success = true;

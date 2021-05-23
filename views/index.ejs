@@ -7,6 +7,16 @@
 
     <!-- ====== INCLUDE NAVIGATION BAR ====== -->
     <%- include('./includes/navigation.ejs') %>
+
+    <!-- ====== MESSAGES ====== -->
+    <% if (errMsg) { %>
+        <div class="jumbotron bg-dark hero__jumbotron text-center">
+            <div class="container text-center">
+                <h4 class="text-warning"><%= errMsg %></h4>
+            </div>
+            <a href="/" class="btn action-button mt-4"><strong> OK </strong></a>
+        </div>
+    <% } %>
     
     <!-- ====== CTA ====== -->
     <div class="jumbotron bg-transparent hero__jumbotron">
@@ -19,9 +29,9 @@
     <!-- ====== MAIN CONTENT ======  -->
     <main class="container main__container flex-grow-1 mt-5">
         <h1 class="main__heading">Introduction</h1>
-        <p>
+        <h3 class="text-center text-md-left mb-4">
             Welcome To Voucher Store!
-        </p>
+        </h3>
         <p>
             Here you are able to search for a clients, Select a client from your search results and create a voucher. 
             To do this follow these simple instructions:

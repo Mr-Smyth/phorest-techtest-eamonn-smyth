@@ -10,42 +10,50 @@
     
     <!-- ====== SEARCH RESULTS ====== -->
     <!-- for case - where no client data or incorrect search input -->
+
     <% if (clients != 'none') {%>
-    <div class="jumbotron search__jumbotron col-12 col-md-10">
-        <h2 class="main__heading">Select a client to create a voucher</h2>
 
-        <% if (!clients.length > 0) { %>
-            <div class="list-group">
-                <a href="#phone" class="search-result flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-between">
-                        <% if (search === null) { %>
-                            <h5 class="m-auto">Sorry but what you entered was incorrect. Click to search again</h5>
-                        <% } else { %> 
-                            <h5 class="m-auto text-break">Sorry we found no results for <strong><em>'<%= search.split('=')[1] %>'</em></strong>. Click to search again</h5>
-                        <% } %>
-                    </div>
-                </a>
-            </div>
-        <% } else { %>
+        <div class="jumbotron search__jumbotron col-12 col-md-10">
 
-            <!-- for case where results were found, we will display them in a list of links -->
-            <% clients.forEach(client => { %>
+            <% if (!clients.length > 0) { %>
+
+                <h2 class="main__heading">Sorry no results found</h2>
                 <div class="list-group">
-                    <!-- i want to pass original search method back to vouchers -->
-                    <a href="/add-voucher/<%= client.clientId %>" class="search-result flex-column align-items-start">
+                    <a href="#phone" class="search-result flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1"><%= client.firstName %> <%= client.lastName %> <%= client.clientId %></h4>
+                            <% if (search === null) { %>
+                                <h5 class="m-auto">Sorry but what you entered was incorrect. Click to search again</h5>
+                            <% } else { %> 
+                                <h5 class="m-auto text-break">Sorry we found no results for <strong><em>'<%= search.split('=')[1] %>'</em></strong>. Click to search again</h5>
+                            <% } %>
                         </div>
-                        <hr>
-                        <p><strong>Phone Number: </strong><%= client.mobile? client.mobile: 'No number provided' %></p>
-                        <p class="d-none d-md-block"><strong>Email: </strong><%= client.email? client.email: 'No email provided' %></p>
-                        <p><strong>Member since: </strong><%= client.clientSince.split('T')[0] %></p>
                     </a>
                 </div>
-            <% }) %>
-        <% } %>
 
-    </div>
+            <% } else { %>  
+
+                <!-- for case where results were found, we will display them in a list of links -->
+                <h2 class="main__heading">Select a client to create a voucher</h2>
+
+                <% clients.forEach(client => { %>
+
+                    <div class="list-group">
+                        <!-- i want to pass original search method back to vouchers -->
+                        <a href="/add-voucher/<%= client.clientId %>" class="search-result flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h4 class="mb-1"><%= client.firstName %> <%= client.lastName %> <%= client.clientId %></h4>
+                            </div>
+                            <hr>
+                            <p><strong>Phone Number: </strong><%= client.mobile? client.mobile: 'No number provided' %></p>
+                            <p class="d-none d-md-block"><strong>Email: </strong><%= client.email? client.email: 'No email provided' %></p>
+                            <p><strong>Member since: </strong><%= client.clientSince.split('T')[0] %></p>
+                        </a>
+                    </div>
+
+                <% }) %>
+
+            <% } %>
+        </div>
     <% } %>
 
     <!-- ====== MAIN CONTENT ======  -->

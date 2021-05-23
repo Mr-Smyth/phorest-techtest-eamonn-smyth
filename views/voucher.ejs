@@ -16,7 +16,7 @@
         <% if (path === '/voucher') { %>
 
             <h1 class="main__heading"><%= pageTitle %></h1>
-            <h3>
+            <h3 class="text-center text-md-left ml-md-5">
                 Create a Voucher for <%= clients.firstName %> <%= clients.lastName %>
             </h3>
             
@@ -35,7 +35,7 @@
 
         <% } else { %> 
 
-            <!-- WE HAVE CREATED A VOUCHER - SUCCESS -->
+            <!-- WE HAVE CREATED A VOUCHER  -->
             <div class="container">
                 <div class="row col-12 no-gutters justify-content-center">
                     <h1 class="main__heading"><%= pageTitle %></h1>
@@ -48,8 +48,8 @@
                                 <h1 class="text-center voucher-text">Gift Voucher</h1>
                                 <div class="card-icon card-icon-large"><i class="fas fa-shopping-cart"></i></div>
 
-                                <div class="row col-12 mt-4 justify-content-around">
-                                    <h4 class="card-title mb-3 voucher-name"><%= voucher.client.firstName %> <%= voucher.client.lastName %></h4>
+                                <div class="row col-12 mt-4 justify-content-around no-gutters">
+                                    <h4 class="card-title mb-3 voucher-name text-center text-md-left"><%= voucher.client.firstName %> <%= voucher.client.lastName %></h4>
                                     <h1 class="d-flex align-items-center mb-0 voucher-amt">
                                         €<%= voucher.voucherData.remainingBalance.toFixed(2) %>
                                     </h1>
