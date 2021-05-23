@@ -11,14 +11,6 @@ const req = {
     }
 }
 
-test('Voucher client related Test - To check client search response status is 200.', () => {
-    expect.assertions(1);
-    return controllers.postCreateVoucher(req)
-    .then(voucher => {
-        expect(voucher.client.status).toEqual(200);
-    })
-});
-
 test('Voucher client related Test - To check if the firstName of the voucher is correct.', () => {
     expect.assertions(1);
     return controllers.postCreateVoucher(req)
@@ -26,16 +18,6 @@ test('Voucher client related Test - To check if the firstName of the voucher is 
         expect(voucher.client.firstName).toEqual('Abagail');
     })
 });
-
-
-test('Voucher creation Test - To check voucher create response status is 201.', () => {
-    expect.assertions(1);
-    return controllers.postCreateVoucher(req)
-    .then(voucher => {
-        expect(voucher.voucherData.status).toEqual(201);
-    })
-});
-
 
 test('Voucher creation Test - To check if the amount of the voucher is correct.', () => {
     expect.assertions(1);

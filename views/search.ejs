@@ -37,8 +37,8 @@
                             <h4 class="mb-1"><%= client.firstName %> <%= client.lastName %> <%= client.clientId %></h4>
                         </div>
                         <hr>
-                        <p><strong>Phone Number: </strong><%= client.mobile %></p>
-                        <p class="d-none d-md-block"><strong>Email: </strong><%= client.email %></p>
+                        <p><strong>Phone Number: </strong><%= client.mobile? client.mobile: 'No number provided' %></p>
+                        <p class="d-none d-md-block"><strong>Email: </strong><%= client.email? client.email: 'No email provided' %></p>
                         <p><strong>Member since: </strong><%= client.clientSince.split('T')[0] %></p>
                     </a>
                 </div>

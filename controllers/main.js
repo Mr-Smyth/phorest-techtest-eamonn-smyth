@@ -101,10 +101,6 @@ exports.postCreateVoucher = (req, res, next) => {
         // check if we got any data from the search - if yes assign it to client      
         if (response.status === 200) {
             client = response.data;
-            client.status = response.status;
-        }
-        else {
-            client.status = response.status;
         }
         return client;
     })
@@ -126,14 +122,11 @@ exports.postCreateVoucher = (req, res, next) => {
         .then(response => {
             if (response.status === 201) {
                 voucher.voucherData = response.data;
-                voucher.voucherData.status = response.status;
                 voucher.client = client;
                 voucher.success = true;
             } else {
-                voucher.voucherData.status = response.status;
                 voucher.success = false;
             } 
-            console.log(voucher)
             return voucher;
         });
     })
