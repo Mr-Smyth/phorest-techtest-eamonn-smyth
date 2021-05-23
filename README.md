@@ -37,6 +37,7 @@
     + [Prepare Github](#prepare-github)
     + [In Heroku - Deploy using Github](#in-heroku---deploy-using-github)
 - [Testing](#testing)
+  * [Automated Testing:](#automated-testing-)
   * [Manual Testing:](#manual-testing-)
 - [Credits](#credits)
 - [Contact](#contact)
@@ -50,12 +51,14 @@
 
 Build a web application to utilize the Phorest platform and interact with their REST API.  
 
-I will build this application using NodeJs using express. I have chosen this as it is obviously using JavaScript which is fundemental to the requirements of the role. I considered using Python with perhaps flask or even Django having recently built applications with these libraries/frameworks. However i am currently learning NodeJs and i do like to push myself to use and learn new tech.   
+I will build this application using NodeJs using express. I have chosen this as using JavaScript is a requirement of the role. I considered using Python with perhaps flask or even Django having recently built applications with these libraries/frameworks. However, I am currently learning NodeJs and I do like to push myself to use and learn new tech.   
 
-NodeJS is asynchronous and event driven. It has 'non-blocking' capabilities that allow it to scale to a large number of requests without being slowed down by a few expensive connections.   
-Also NodeJs by nature will allow me to keep my code more modularized and as a result easier to expand on or modify in the future if required.  
+NodeJS is asynchronous and event-driven. It has 'non-blocking capabilities that allow it to scale to a large number of requests without being slowed down by a few expensive connections.   
+Also, NodeJs by nature will allow me to keep my code more modularized and as a result easier to expand on or modify in the future if required.  
 
-I will be using Git version control, with Projects to manage the workflow.
+I will be using Git version control, with Projects to manage the workflow.   
+
+I will use JEST to run automated tests with mocked data to test the API related logic.
 
 [<< Back to Index <<](#index)
 
@@ -77,10 +80,10 @@ I will be using Git version control, with Projects to manage the workflow.
 
 ## User Stories
 
-+   As a user i want to be able to search the clients by phone number or email address
-+   As a user, when i search i want to get back a list of all the possible results
-+   As a user i want to be able to create a voucher for a found client
-+   As a user i want to be notified of a successful voucher creation
++   As a user I want to be able to search the clients by phone number or email address
++   As a user, when I search I want to get back a list of all the possible results
++   As a user I want to be able to create a voucher for a found client
++   As a user I want to be notified of a successful voucher creation
 
 [<< Back to Index <<](#index)
 
@@ -90,7 +93,7 @@ I wanted to keep a nice balance between informing the user, and also getting to 
 
 ## Colours
 
-To give a relaxed contrast to the darkness of the Navigation and background image i used variations of Browns and Tans to highlight the text and text areas.  
+To give a relaxed contrast to the darkness of the Navigation and background image I used variations of Browns and Tans to highlight the text and text areas.  
 + [Tan and Brown](https://www.schemecolor.com/tan-and-brown-color-scheme.php)
 
 [<< Back to Index <<](#index)
@@ -98,13 +101,13 @@ To give a relaxed contrast to the darkness of the Navigation and background imag
 ## Fonts
 
 I used Luckiest Guy, to give a bolder variation to the site logo.   
-For the rest of the content i used a mixture of Nunito and Poppins.
+For the rest of the content, I used a mixture of Nunito and Poppins.
 
 [<< Back to Index <<](#index)
 
 ## Wireframes
 
-The following wireframes were used to layout this project, but with plenty of light fonts and a feel good hero image in the background. Overall i feel the colours and images give a feeling of professional, but yet the feel good factor of a late summer evening.
+The following wireframes were used to layout this project but with plenty of light fonts and a feel-good hero image in the background. Overall I feel the colours and images give a feeling of professionalism, but yet the feel-good factor of a late summer evening.
 
 + [home page](https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth/blob/main/docs/wireframes/home.pdf)
 + [Search page](https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth/blob/main/docs/wireframes/client-search.pdf)
@@ -124,7 +127,7 @@ The home page is very simple and clear in what it intends. A call to action butt
 
 ### Search Page
 
-The Search page has a clearly defined 2 option search method. You can search by either the phone number or by the email address. Once the user enters valid information and clicks the search button, the request will be processed and results will be displayed.   
+The Search page has a clearly defined 2 option search method. You can search by either phone number or by email address. Once the user enters valid information and clicks the search button, the request will be processed and results will be displayed.   
 
 The results will be displayed on top of the original search window, leaving the option to search again if required.   
 
@@ -136,6 +139,7 @@ Any search that returns no results will explain this to the user clearly, and gi
 
 
 # Technologies Used
+
 This application uses the following Technologies:
 + [NodeJs](https://nodejs.org/en/docs/)
 + [ExpressJs](https://expressjs.com/)
@@ -148,21 +152,23 @@ This application uses the following Technologies:
 
 [<< Back to Index <<](#index)
 
+
+
 # Deployment
 
 ## How to run this project locally
 
-To run this project on your own IDE follow the instructions below:
+To run this project on your IDE follow the instructions below:
 
-### Requiremants 
+### Requirements 
 
 + An IDE such as Visual Studio Code.
 + Node installed
 + Git Installed
 
 ### Instructions
-+ Save a copy of the github repository located at https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth by clicking the "Code" button then selecting the [**download zip**](https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth/archive/refs/heads/main.zip) button at the top of the page and extracting the zip file to your chosen folder. 
-+ Unzip download into preferred directory.
++ Save a copy of the GitHub repository located at https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth by clicking the "Code" button then selecting the [**download zip**](https://github.com/Mr-Smyth/phorest-techtest-eamonn-smyth/archive/refs/heads/main.zip) button at the top of the page and extracting the zip file to your chosen folder. 
++ Unzip the download into the preferred directory.
 
 ---
 
@@ -198,41 +204,49 @@ BRANCH_ID='**API-BranchId-here**'
 
 ### Prepare Github
 
-+ Make sure the project is upto date on github and all changes have been pushed.
++ Make sure the project is up to date on GitHub and all changes have been pushed.
 
 ### In Heroku - Deploy using Github
 
-+ Setup and account and log in to Heroku
++ Set up an account and log in to Heroku
 + On the apps page select `NEW`.
 + Give the app a name and select the closest region – then click `Create App`.
 + Goto the deploy tab
 + Set deployment method to GitHub
-+ Search for The name of the project on github
++ Search for The name of the project on GitHub
 + Click connect
 + Scroll down and click Enable Automatic Deploys
 + Select the master branch.
 + Click Deploy branch
 
-**- The project will be now deployed to heroku, and any further git pushes will update heroku automatically. An open app button at the top of the page will take you to the deployed site.**
+**- The project will be now deployed to Heroku, and any further git pushes will update Heroku automatically. An open app button at the top of the page will take you to the deployed site.**
 
 [<< Back to Index <<](#index)
 
 # Testing
 
-Having not used automated testing in a project before, i decided to learn [JEST](https://jestjs.io/) for this application.   
+## Automated Testing
 
-I tried to implement meaningful automated tests using [JEST](https://jestjs.io/). However, I found that i needed to move the calls to the axios helper method, out of the controller and into a helper file. This gave me a function that returns something i could easily test.    
-But i quickly found the code was repeating itself, due to needing to deal with promises wherever i required the client data. Also i then had a controller passing to a helper, passing to another helper and back again, which i found very untidy, so decided against it.  
+Included are some automated tests to check the controller logic dealing with the return of data to the routes/views.
 
-I found this quite frustrating and the result was that the only tests i could write directly tested calls to the Phorest REST API, which i had replaced with a mocked call so as not to bombard the API which is not good practice in testing. The result of this was i was essentially testing my own mock function, which was pointless.   
+### To run the tests
 
-So unfortunately, i decided to abandon automated testing for this application, and continue with manual testing of code and templates.
+- After successfully following the [Deployment](#deployment) instructions to get a local copy working in your code editor.
+- Make sure all dependencies have been installed using `npm-install`
+- Open a terminal in the project directory.
+- Run: `npm test`.
+- Results will be displayed in the terminal
+
+
+
+[<< Back to Index <<](#index)
+
 
 ## Manual Testing:
 
 Multiple calls were made to the API using the application. It handles 404 pages gracefully and every page has a clear indication showing the user at what stage they are at.
 
-For this application i did not have time to complete a full documentation with images of the testing carried out. But see below for a summary of the testing carried out.
+For this application, I did not have time to complete full documentation with images of the testing carried out. But see below for a summary of the testing carried out.
 
 All pages were checked for errors in the console, and no errors were found.  
 
@@ -273,10 +287,10 @@ All pages were checked for errors in the console, and no errors were found.
 
 |                                    User Story                                       | Achieved |
 | --------------------------------------------------------------------------------    | -------: |
-| As a user i want to be able to search the clients by phone number or email address  |   Yes   |
-| As a user, when i search i want to get back a list of all the possible results      |   Yes   |
-| As a user i want to be able to create a voucher for a found client                  |   Yes   |
-| As a user i want to be notified of a successful voucher creation                    |   Yes   |
+| As a user, I want to be able to search the clients by phone number or email address  |   Yes   |
+| As a user, when I search I want to get back a list of all the possible results      |   Yes   |
+| As a user, I want to be able to create a voucher for a found client                  |   Yes   |
+| As a user, I want to be notified of a successful voucher creation                    |   Yes   |
 
 
 </details>
