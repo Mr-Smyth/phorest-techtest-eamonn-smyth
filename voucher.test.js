@@ -6,10 +6,10 @@ const req = {
         clientId: 'F7-OD3o2l6stz5iSDPxY7A'
     }
 }
-test('Voucher Test - To check if the selected client data is returned from mock axios data', () => {
+test('Voucher Test - To check if the selected client data is returned by the controller using mock data', () => {
     expect.assertions(1);
-    return controllers.getVoucher(req)
+    return controllers.getAddVoucher(req)
     .then(clients => {
-        expect(clients[0].firstName).toEqual('Abagail');
+        expect(clients.firstName).toEqual('Abagail');
     })
 });

@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */ 
 // ====== IMPORTS ======
-const axiosHelpers = require('../utils/axios-search-all');
+const axiosHelpers = require('../utils/axios-fetch');
 const dateHelpers = require('../utils/dates');
 require('dotenv').config();
 
@@ -55,7 +55,7 @@ exports.postClientSearch = (req, res, next) => {
     let search = (searchedPhone)? `client?phone=${searchedPhone}`:(searchedEmail)? `client?email=${searchedEmail}`: '' ;
     
     // return the response of the API call via the axios helper to search clients
-    return axiosHelpers.getClients(search)    
+    return axiosHelpers.getClientSearch(search)    
     .then(response => {
         let clients = {}
         if (response.data.page.size > 0) {
@@ -74,15 +74,17 @@ exports.postClientSearch = (req, res, next) => {
  * @param {*} req 
  * @param {*} res 
  * @param {*} next 
+ * 
+ * @returns {Promise} - A promise containing the selected clients data object
  */
-exports.getVoucher = (req, res, next) => {
+exports.getAddVoucher = (req, res, next) => {
     // we pass the selected clients Id from the search results
     const clientId = req.params.clientId;
 
     // i want to get the client we are creating the voucher for, so i can personalize the template
     const search = `client/${clientId}`;
 
-    return axiosHelpers.getClients(search)    
+    return axiosHelpers.getClientById(search)    
     .then(response => {
         let clients = {}
         if (response) {

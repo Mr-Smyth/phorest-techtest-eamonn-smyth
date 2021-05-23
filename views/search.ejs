@@ -32,7 +32,7 @@
             <% clients.forEach(client => { %>
                 <div class="list-group">
                     <!-- i want to pass original search method back to vouchers -->
-                    <a href="/voucher/<%= client.clientId %>" class="search-result flex-column align-items-start">
+                    <a href="/add-voucher/<%= client.clientId %>" class="search-result flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
                             <h4 class="mb-1"><%= client.firstName %> <%= client.lastName %> <%= client.clientId %></h4>
                         </div>

@@ -22,7 +22,8 @@ router.get('/search', mainController.getSearch);
 // Handle Client Search
 router.post('/client-search', (req, res, next) => {
 
-    data = mainController.postClientSearch(req)
+    // Get client search results from controller
+    mainController.postClientSearch(req)
     .then(clients => {
         // render the results
         res.render('search', {
@@ -37,11 +38,11 @@ router.post('/client-search', (req, res, next) => {
 });
 
 // Create voucher page
-router.get('/voucher/:clientId', (req, res, next) => {
+router.get('/add-voucher/:clientId', (req, res, next) => {
 
-    data = mainController.getVoucher(req)
+    // Get the selected clients object from the controller
+    mainController.getAddVoucher(req)
     .then(client => {
-        console.log(client)
         // render the results
         res.render('voucher', {
             pageTitle: 'Add a Voucher',

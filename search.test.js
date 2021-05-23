@@ -1,5 +1,5 @@
 // explain route from test file to mock folder
-jest.mock('./utils/axios-search-all')
+jest.mock('./utils/axios-fetch')
 
 const controllers = require('./controllers/main');
 
