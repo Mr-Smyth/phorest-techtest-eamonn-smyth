@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */ 
 // ====== IMPORTS ======
-const axiosHelpers = require('../utils/axios');
+const axiosHelpers = require('../utils/axios-search-all');
 const dateHelpers = require('../utils/dates');
 require('dotenv').config();
 
@@ -14,10 +14,7 @@ require('dotenv').config();
  * @param {*} next 
  */
 exports.getIndex = (req, res, next) => {
-    res.render('index', {
-        pageTitle: 'Home page',
-        path :'/index',
-    });
+    return 'Mr. Blobby';
 };
 
 
@@ -40,35 +37,33 @@ exports.getSearch = (req, res, next) => {
 /**
  * Handle The client search functionality
  * 
+ * * Get the client data
+ * * Include the original search query
+ * 
  * @param {*} req 
  * @param {*} res 
  * @param {*} next 
+ * 
+ * @returns {Promise} - A promise containing the clients data - or a blank object. Also included inside this promise is the original search query
  */
 exports.postClientSearch = (req, res, next) => {
 
     // Sort out what search we are getting and assign it to a search variable
     const searchedPhone = req.body.phone;
     const searchedEmail = req.body.email;
-    // Ternary just to define our search depending on what the user has entered
+    // Undefined is Falsey so use a ternary just to define our search depending on what the user has entered
     let search = (searchedPhone)? `client?phone=${searchedPhone}`:(searchedEmail)? `client?email=${searchedEmail}`: '' ;
     
-    // call custom axios util to search clients
-    axiosHelpers.getClients(search)    
+    // return the response of the API call via the axios helper to search clients
+    return axiosHelpers.getClients(search)    
     .then(response => {
-        let clients = [];
-        
-        // check if we got any data from the search - if yes assign it to clients
-        if (response.page.size > 0) {
-            clients = response._embedded.clients;
+        let clients = {}
+        if (response.data.page.size > 0) {
+            clients = response.data._embedded.clients
         }
-
-        // render the results
-        res.render('search', {
-            pageTitle: 'Client Search',
-            path :'/search',
-            search: search,
-            clients: clients
-        });
+        // i want to include the original search in the template - so i will include it in the client
+        clients.search = search
+        return clients
     })
     .catch(err => console.log(err));
 };
@@ -86,20 +81,14 @@ exports.getVoucher = (req, res, next) => {
 
     // i want to get the client we are creating the voucher for, so i can personalize the template
     const search = `client/${clientId}`;
-    axiosHelpers.getClients(search)    
+
+    return axiosHelpers.getClients(search)    
     .then(response => {
-        // our response should include an object containing our client
-        let client = [];
-        // check if we got any data from the search - if yes assign it to clients
+        let clients = {}
         if (response) {
-            client = response;
+            clients = response.data
         }
-        // render the results
-        res.render('voucher', {
-            pageTitle: 'Add a Voucher',
-            path :'/voucher',
-            clients: client
-        });
+        return clients
     })
     .catch(err => console.log(err));
 };
