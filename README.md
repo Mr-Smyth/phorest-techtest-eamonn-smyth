@@ -20,7 +20,6 @@
 - [UI](#ui)
   * [Colours](#colours)
   * [Fonts](#fonts)
-  * [Styling](#styling)
   * [Wireframes](#wireframes)
 - [Features](#features)
     + [Common features](#common-features)
@@ -29,7 +28,7 @@
 - [Technologies Used](#technologies-used)
 - [Deployment](#deployment)
   * [How to run this project locally](#how-to-run-this-project-locally)
-    + [Requiremants](#requiremants)
+    + [Requirements](#requirements)
     + [Instructions](#instructions)
     + [ENV variables](#env-variables)
     + [Run the Application locally](#run-the-application-locally)
@@ -37,10 +36,14 @@
     + [Prepare Github](#prepare-github)
     + [In Heroku - Deploy using Github](#in-heroku---deploy-using-github)
 - [Testing](#testing)
-  * [Automated Testing - Using Jest:](#automated-testing-)
+  * [Automated Testing](#automated-testing)
+    + [To run the tests](#to-run-the-tests)
   * [Manual Testing:](#manual-testing-)
+    + [Manual Testing Results](#manual-testing-results)
 - [Credits](#credits)
 - [Contact](#contact)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
 --- 
