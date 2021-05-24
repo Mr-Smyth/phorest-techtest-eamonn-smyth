@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */ 
+
 // ====== IMPORTS ======
 const axios = require('axios');
 
@@ -10,7 +12,7 @@ exports.getClientSearch = function (search) {
         }
     })
     .then(response => {
-        return response
+        return response;
     })
     .catch(err => {
         console.log(`Error: There was a ${err.response.data.status} response`);
@@ -30,7 +32,7 @@ exports.getClientById = function (search) {
         }
     })
     .then(response => {
-        return response
+        return response;
     })
     .catch(err => {
         console.log(`Error: There was a ${err.response.data.status} response`);
@@ -49,7 +51,7 @@ exports.postVoucher = function (voucherData) {
         }
     })
     .then(response => {
-        return response
+        return response;
     })
     .catch(err => {
         console.log(`Error: There was a ${err.response.data.status} response`);

@@ -29,7 +29,7 @@ exports.postClientSearch = (req, res, next) => {
     // return the response of the API call via the axios helper to search clients
     return axiosHelpers.getClientSearch(search)    
     .then(response => {
-        let clients = {}
+        let clients = {};
         if (response === null) {
             return res.redirect('/?error=Sorry but we could not complete this Client search. This is because the request to the service provider is currently unavailable. Please try again later or contact support for assistance.');
         }
@@ -44,6 +44,7 @@ exports.postClientSearch = (req, res, next) => {
     .catch(err => console.log(err));
 };
 
+
 /**
  * Display our Voucher create page
  * 
@@ -56,7 +57,7 @@ exports.postClientSearch = (req, res, next) => {
 exports.getAddVoucher = (req, res, next) => {
     
     // default variables
-    let clients = {}
+    let clients = {};
 
     // we pass the selected clients Id from the search results
     const clientId = req.params.clientId;
@@ -80,6 +81,7 @@ exports.getAddVoucher = (req, res, next) => {
     })
     .catch(err => console.log(err));
 };
+
 
 /**
  * Handle creating a voucher

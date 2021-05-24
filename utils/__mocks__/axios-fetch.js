@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */ 
+
 exports.getClientSearch = () => {
     return Promise.resolve({
         data: {
@@ -74,4 +76,3 @@ exports.postVoucher = (voucherData) => {
           }
     });
 };
-

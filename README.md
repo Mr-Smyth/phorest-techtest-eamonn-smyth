@@ -37,7 +37,7 @@
     + [Prepare Github](#prepare-github)
     + [In Heroku - Deploy using Github](#in-heroku---deploy-using-github)
 - [Testing](#testing)
-  * [Automated Testing:](#automated-testing-)
+  * [Automated Testing - Using Jest:](#automated-testing-)
   * [Manual Testing:](#manual-testing-)
 - [Credits](#credits)
 - [Contact](#contact)
@@ -142,12 +142,13 @@ Any search that returns no results will explain this to the user clearly, and gi
 
 This application uses the following Technologies:
 + [NodeJs](https://nodejs.org/en/docs/)
++ [Vanilla Javascript](https://www.javascript.com/)
++ [CSS](https://en.wikipedia.org/wiki/CSS)
++ [JEST](https://jestjs.io/docs/getting-started)
 + [ExpressJs](https://expressjs.com/)
 + [EJS](https://ejs.co/)
 + [Axios](https://github.com/axios/axios)
 + [HTML5](https://en.wikipedia.org/wiki/HTML5)
-+ [CSS](https://en.wikipedia.org/wiki/CSS)
-+ [Vanilla Javascript](https://www.javascript.com/)
 + [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
 
 [<< Back to Index <<](#index)
@@ -227,7 +228,7 @@ BRANCH_ID='**API-BranchId-here**'
 
 ## Automated Testing
 
-Included are some automated tests to check the controller logic dealing with the return of data to the routes/views.
+Included are some automated tests to check the controller logic dealing with the return of data to the routes/views. Jest was used to implement these tests, and to make sure I wasn't testing Axios, or bombarding the API with calls, I created a mock Axios response in the utils/__mocks__ folder to use in the testing.
 
 ### To run the tests
 
@@ -244,7 +245,14 @@ Included are some automated tests to check the controller logic dealing with the
 
 ## Manual Testing:
 
-Multiple calls were made to the API using the application. It handles 404 pages gracefully and every page has a clear indication showing the user at what stage they are at.
++ Multiple calls were made to the API using the application. It handles 404 pages gracefully and every page has a clear indication showing the user at what stage they are at.
+
++ At any stage in the process, if the call to the API is unsuccessful, the controllers will redirect back to the home page, giving a user-friendly message to the user, this will happen if there is no response from the API, something I mocked at each stage by removing the basic auth.
+
++ Any problems with getting a response, will direct to the home page as mentioned above, but will also describe the problem in the console.
+
++ Any searches returning no results are dealt with gracefully, inviting the user to search again.
+
 
 For this application, I did not have time to complete full documentation with images of the testing carried out. But see below for a summary of the testing carried out.
 
@@ -285,12 +293,12 @@ All pages were checked for errors in the console, and no errors were found.
 <details>
 <summary>User Stories tested</summary>
 
-|                                    User Story                                       | Achieved |
-| --------------------------------------------------------------------------------    | -------: |
-| As a user, I want to be able to search the clients by phone number or email address  |   Yes   |
-| As a user, when I search I want to get back a list of all the possible results      |   Yes   |
-| As a user, I want to be able to create a voucher for a found client                  |   Yes   |
-| As a user, I want to be notified of a successful voucher creation                    |   Yes   |
+|                                    User Story                                        | Achieved |
+| -----------------------------------------------------------------------------------  | -------: |
+| As a user, I want to be able to search the clients by phone number or email address  |    Yes   |
+| As a user, when I search I want to get back a list of all the possible results       |    Yes   |
+| As a user, I want to be able to create a voucher for a found client                  |    Yes   |
+| As a user, I want to be notified of a successful voucher creation                    |    Yes   |
 
 
 </details>
@@ -310,8 +318,6 @@ All pages were checked for errors in the console, and no errors were found.
 [<< Back to Index <<](#index)
 
 # Contact
-If you have any questions relating to this project, please feel free to email me anytime:   
-
-**e.smyth75@gmail.com**
+If you have any questions relating to this project, please feel free to email me anytime: @ e.smyth75@gmail.com
 
 [<< Back to Index <<](#index)
